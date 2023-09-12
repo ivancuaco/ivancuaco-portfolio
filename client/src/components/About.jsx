@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet'
 import image1 from '/images/image1.avif'
 import image2 from '/images/image2.avif'
 import image3 from '/images/image3.avif'
@@ -5,6 +6,9 @@ import image3 from '/images/image3.avif'
 function About() {
   return (
     <>
+      <Helmet>
+        <title>Ivan Cuaco Portfolio</title>
+      </Helmet>
 
       <div className="grid md:grid-cols-3 gap-4 mb-4">
         <div className="flex items-center justify-center md:order-2">

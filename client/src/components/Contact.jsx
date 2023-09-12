@@ -1,5 +1,6 @@
 import emailjs from '@emailjs/browser'
 import { useRef, useState } from 'react'
+import { Helmet } from 'react-helmet'
 import { SiGmail, SiLinkedin, SiSkype, SiTelegram } from "react-icons/si"
 import { toast } from 'react-toastify'
 import Spinner from './Spinner'
@@ -64,6 +65,9 @@ function Contact() {
 
   return (
     <>
+      <Helmet>
+        <title>Contact | Ivan Cuaco Portfolio</title>
+      </Helmet>
       <div className="grid md:grid-cols-2 gap-4">
 
         <div className='mb-4'>

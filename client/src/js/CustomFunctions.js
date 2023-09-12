@@ -1,25 +1,24 @@
 export function calculateYearsMonthsFromDate(dateString) {
-  const parts = dateString.split(" ");
+  let parts = dateString.split(" ");
 
-  const monthNames = [
+  let monthNames = [
     "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
   ];
 
-  const startMonth = monthNames.indexOf(parts[0]);
-  const startYear = parseInt(parts[1]);
+  let startMonth = monthNames.indexOf(parts[0]);
+  let startYear = parseInt(parts[1]);
 
-  const startDate = new Date(startYear, startMonth, 1);
-  const endDate = new Date();
+  let startDate = new Date(startYear, startMonth, 1);
+  let endDate = new Date();
 
-  const years = endDate.getFullYear() - startDate.getFullYear();
-  const months = endDate.getMonth() - startDate.getMonth();
+  let years = endDate.getFullYear() - startDate.getFullYear();
+  let months = endDate.getMonth() - startDate.getMonth();
 
   if (months < 0) {
     years--
     months += 12
   }
 
-  console.log({ years, months })
   return { years, months }
 }

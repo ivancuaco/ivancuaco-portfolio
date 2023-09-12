@@ -1,3 +1,5 @@
+import { useState } from 'react'
+import { Helmet, } from 'react-helmet'
 import { calculateYearsMonthsFromDate } from '../js/CustomFunctions'
 import ajax from '/images/tech-icons/ajax.png'
 import apache from '/images/tech-icons/apache.png'
@@ -27,17 +29,21 @@ import wordpress from '/images/tech-icons/wordpress.png'
 import xml from '/images/tech-icons/xml.png'
 
 
-
 function Tech() {
-  const LampStack = calculateYearsMonthsFromDate('May 2021')
-  const yearsLAMP = LampStack.years
-  const monthsLAMP = LampStack.months
-  const MernStack = calculateYearsMonthsFromDate('August 2023')
-  const yearsMERN = MernStack.years
-  const monthsMERN = MernStack.months
+  const [lampStack, setLampStack] = useState(calculateYearsMonthsFromDate('May 2021'))
+  const [yearsLAMP, setYearsLAMP] = useState(lampStack.years)
+  const [monthsLAMP, setMonthsLAMP] = useState(lampStack.months)
+
+  const [mernStack, setMernStack] = useState(calculateYearsMonthsFromDate('August 2023'))
+  const [yearsMERN, setYearsMERN] = useState(mernStack.years)
+  const [monthsMERN, setMonthsMERN] = useState(mernStack.months)
 
   return (
     <>
+      <Helmet>
+        <title>Tech Stack | Ivan Cuaco Portfolio</title>
+      </Helmet>
+
       <div className='md:flex justify-center mb-10'>
         <p className='text-center font-bold mx-4'>
           LAMP STACK: {yearsLAMP} {monthsLAMP ? 'years' : 'year'} and {monthsLAMP} {monthsLAMP ? 'months' : 'month'}

@@ -1,9 +1,13 @@
+import { Helmet } from "react-helmet";
 import { FcBusiness, FcGraduationCap } from "react-icons/fc";
 import { workExperience } from '../js/data';
 
 function Experience() {
   return (
     <>
+      <Helmet>
+        <title>Experience | Ivan Cuaco Portfolio</title>
+      </Helmet>
       <div className="mb-10">
         <div className="flex items-center  text-2xl mb-4">
           <FcGraduationCap className="mr-2" />
