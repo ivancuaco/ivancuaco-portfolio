@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .email-template {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .email-content {
+      height: 100%;
+      width: 550px;
+      margin: auto;
+      border: 1px solid #000000;
+      border-collapse: collapse;
+    }
+
+    .email-content table {
+      width: 100%;
+    }
+
+    .email-header {
+      padding: 1em;
+      color: #ffffff;
+      background-color: #3b82f6;
+    }
+
+    .email-main {
+      padding: 1em;
+    }
+
+    .email-footer {
+      padding: 1em;
+      color: #ffffff;
+      background-color: #000000;
+    }
+
+    .email-footer p {
+      font-size: 0.75em;
+    }
+
+    .mb {
+      margin-bottom: 1em;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    img {
+      display: block;
+      width: 200px;
+      height: 200px;
+      margin: 0 auto 1em;
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body>
+  <table class="email-template">
+    <tr>
+      <td>
+
+        <table class="email-content">
+          <tr>
+            <td>
+
+              <table class="email-header text-center">
+                <tr>
+                  <td>
+                    <h1>Ivan Cuaco Portfolio</h1>
+                  </td>
+                </tr>
+              </table>
+
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+
+              <table class="email-main">
+                <tr>
+                  <td>
+                    <p class="mb">Good Day {{fullname}},</p>
+                    <p>
+                      Thank you for reaching out to me through my web portfolio. I'm excited to hear from you!
+                    </p>
+
+                    <img src="/images/email.png" />
+
+                    <p class="text-center mb">
+                      I appreciate your interest in my work. I'll review your message and get back to you as soon as
+                      possible. In the meantime, if you have any questions or need further information, please feel free
+                      to let me know.
+                    </p>
+
+                    <p>Best regards,</p>
+                    <p>Jhon Ivan D. Cuaco</p>
+                    <p>Ivancuaco.dev Portfolio</p>
+                  </td>
+                </tr>
+              </table>
+
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+
+              <table class="email-footer text-center">
+                <tr>
+                  <td>
+                    <p>Thank you for contacting us!</p>
+                    <p>For any further inquiries, please don't hesitate to reach out.</p>
+                    <p>Contact Information:</p>
+                    <p>Email: info@example.com</p>
+                    <p>Phone: +1 (123) 456-7890</p>
+                  </td>
+                </tr>
+              </table>
+
+            </td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>
