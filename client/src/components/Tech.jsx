@@ -1,3 +1,4 @@
+import { calculateYearsMonthsFromDate } from '../js/CustomFunctions'
 import ajax from '/images/tech-icons/ajax.png'
 import apache from '/images/tech-icons/apache.png'
 import api from '/images/tech-icons/api.png'
@@ -25,9 +26,30 @@ import tailwindcss from '/images/tech-icons/tailwindcss.png'
 import wordpress from '/images/tech-icons/wordpress.png'
 import xml from '/images/tech-icons/xml.png'
 
+
+
 function Tech() {
+  const LampStack = calculateYearsMonthsFromDate('May 2021')
+  const yearsLAMP = LampStack.years
+  const monthsLAMP = LampStack.months
+  const MernStack = calculateYearsMonthsFromDate('August 2023')
+  const yearsMERN = MernStack.years
+  const monthsMERN = MernStack.months
+
   return (
     <>
+      <div className='md:flex justify-center mb-10'>
+        <p className='text-center font-bold mx-4'>
+          LAMP STACK: {yearsLAMP} {monthsLAMP ? 'years' : 'year'} and {monthsLAMP} {monthsLAMP ? 'months' : 'month'}
+        </p>
+        <span className='hidden md:block'>|</span>
+        <p className='text-center font-bold mx-4'>
+          MERN STACK: {yearsMERN} {monthsMERN ? 'years' : 'year'} and {monthsMERN} {monthsMERN ? 'months' : 'month'}
+        </p>
+      </div>
+
+      <hr className='border-blue-500 w-[80%] mx-auto mb-10' />
+
       <div className="grid md:grid-cols-3 border-b p-4 mb-4">
         <div className="flex items-center justify-center mb-2">
           <p className="text-center text-xl font-bold">Frontend Development</p>

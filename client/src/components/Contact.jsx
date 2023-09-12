@@ -1,16 +1,64 @@
-import { SiGmail, SiLinkedin, SiSkype, SiTelegram } from "react-icons/si";
-import { Api } from '../api';
-import contact from '/images/contact.avif';
+import emailjs from '@emailjs/browser'
+import { useRef, useState } from 'react'
+import { SiGmail, SiLinkedin, SiSkype, SiTelegram } from "react-icons/si"
+import { toast } from 'react-toastify'
+import Spinner from './Spinner'
+import contact from '/images/contact.avif'
+
+emailjs.init('ewfCeA_ONDcdHnB7K')
 
 function Contact() {
+
+  const formBtn = useRef()
+  const [formBtnText, setFormBtnText] = useState('Send Message')
 
   const formHandler = (event) => {
     event.preventDefault()
 
+    formBtn.current.disabled = true
+    setFormBtnText(<Spinner />)
+
+
     const form = event.target
     const formData = Object.fromEntries(new FormData(form))
-    Api.post('/emails/contact', formData).then(response => {
-      console.log(response)
+
+    const contactCopy = {
+      fullname: formData.fullname,
+      email: formData.email,
+      subject: formData.subject,
+      message: formData.message
+    }
+    emailjs.send(
+      "service_oaxv17i",
+      "template_nxf7zn5",
+      contactCopy
+    ).then((response) => {
+
+      const templateParams = {
+        fullname: formData.fullname,
+        to: formData.email
+      }
+
+      emailjs.send(
+        "service_oaxv17i",
+        "template_8ng3831",
+        templateParams
+
+      ).then((response) => {
+        toast.success('Mail Sent')
+        formBtn.current.disabled = false
+        setFormBtnText('Send Message')
+
+      }, function (error) {
+        toast.error('Mail Not Send. Please try again or later')
+        formBtn.current.disabled = false
+        setFormBtnText('Send Message')
+      });
+
+    }, function (error) {
+      toast.error('Mail Not Send. Please try again or later')
+      formBtn.current.disabled = false
+      setFormBtnText('Send Message')
     })
   }
 
@@ -44,11 +92,11 @@ function Contact() {
         <div>
           <form className="border shadow-xl rounded p-4" onSubmit={formHandler}>
             <p className="font-bold mb-4">Contact Now</p>
-            <input name="fullname" placeholder="Fullname" className="border rounded p-2 w-full mb-2" />
-            <input name="email" placeholder="Email" className="border rounded p-2 w-full mb-2" />
-            <input name="subject" placeholder="Subject" className="border rounded p-2 w-full mb-2" />
-            <textarea name="message" placeholder="Message" className="border rounded p-2 w-full mb-2"></textarea>
-            <button className="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded block ml-auto">Send Message</button>
+            <input name="fullname" placeholder="Fullname" className="dark:text-black border rounded p-2 w-full mb-2" />
+            <input name="email" placeholder="Email" className="dark:text-black border rounded p-2 w-full mb-2" />
+            <input name="subject" placeholder="Subject" className="dark:text-black border rounded p-2 w-full mb-2" />
+            <textarea name="message" placeholder="Message" className="dark:text-black border rounded p-2 w-full mb-2"></textarea>
+            <button ref={formBtn} className="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded block ml-auto">{formBtnText}</button>
           </form>
         </div>
 
