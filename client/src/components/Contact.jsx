@@ -48,6 +48,7 @@ function Contact() {
       ).then((response) => {
         toast.success('Mail Sent')
         formBtn.current.disabled = false
+        form.reset()
         setFormBtnText('Send Message')
 
       }, function (error) {
