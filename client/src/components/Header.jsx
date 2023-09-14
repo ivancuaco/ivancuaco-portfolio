@@ -67,12 +67,15 @@ function Header() {
 
           <div className="flex flex-wrap items-center justify-center md:justify-start lg:w-[80%] mb-2">
             <span className="scale-95 hover:scale-100 duration-500 text-xs rounded-full border px-2 py-1 my-1">Web Developer</span>
+            <span className="scale-95 hover:scale-100 duration-500 text-xs rounded-full border px-2 py-1 my-1">Front-end Web Developer</span>
+            <span className="scale-95 hover:scale-100 duration-500 text-xs rounded-full border px-2 py-1 my-1">Back-end Web Developer</span>
+            <span className="scale-95 hover:scale-100 duration-500 text-xs rounded-full border px-2 py-1 my-1">Fullstack Web Developer</span>
             <span className="scale-95 hover:scale-100 duration-500 text-xs rounded-full border px-2 py-1 my-1">Freelance Web Developer</span>
             <span className="scale-95 hover:scale-100 duration-500 text-xs rounded-full border px-2 py-1 my-1">WordPress Developer</span>
             <span className="scale-95 hover:scale-100 duration-500 text-xs rounded-full border px-2 py-1 my-1">PHP Developer</span>
-            <span className="scale-95 hover:scale-100 duration-500 text-xs rounded-full border px-2 py-1 my-1">Junior React Developer</span>
+            {/* <span className="scale-95 hover:scale-100 duration-500 text-xs rounded-full border px-2 py-1 my-1">Junior React Developer</span> */}
             <span className="scale-95 hover:scale-100 duration-500 text-xs rounded-full border px-2 py-1 my-1">LAMP Stack</span>
-            <span className="scale-95 hover:scale-100 duration-500 text-xs rounded-full border px-2 py-1 my-1">MERN Stack</span>
+            {/* <span className="scale-95 hover:scale-100 duration-500 text-xs rounded-full border px-2 py-1 my-1">MERN Stack</span> */}
           </div>
 
           <p className="text-xs text-center md:text-left md:w-[90%] mb-2">
