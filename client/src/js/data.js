@@ -29,7 +29,7 @@ export const workExperience = [
   },
   {
     title: 'StorageBrighton, UK (Experimental)',
-    position: 'Web Developer',
+    position: 'Freelance Web Developer',
     year: 'November 2022 - December 2022',
     link: '',
     img: sb,
