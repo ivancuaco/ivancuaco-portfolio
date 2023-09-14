@@ -144,7 +144,7 @@ export const projects = [
     img: vax,
     link: '',
     tech: [
-      'PHP', 'Bootstrap', 'JQuery', 'MySQL', 'WordPress', 'Roots Sage Theme', 'Codeigniter3'
+      'PHP', 'Bootstrap', 'JQuery', 'MySQL', 'WordPress', 'Roots Sage Theme', 'Codeigniter3', 'Hostinger'
     ]
   }
 ]
