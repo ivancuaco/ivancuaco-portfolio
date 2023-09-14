@@ -1,7 +1,7 @@
 import emailjs from '@emailjs/browser'
 import { useRef, useState } from 'react'
 import { Helmet } from 'react-helmet'
-import { SiGmail, SiLinkedin, SiSkype, SiTelegram } from "react-icons/si"
+import { SiGmail, SiLinkedin, SiSkype } from "react-icons/si"
 import { toast } from 'react-toastify'
 import Spinner from './Spinner'
 import contact from '/images/contact.avif'
@@ -84,10 +84,9 @@ function Contact() {
               <p className="text-sm mb-4">You can communicate using the following:</p>
 
               <div className='flex items-center justify-center sm:justify-start md:justify-center'>
-                <a href=""><SiGmail className="text-4xl mx-2" /></a>
-                <a href=""><SiSkype className="text-4xl mx-2" /></a>
-                <a href=""><SiLinkedin className="text-4xl mx-2" /></a>
-                <a href=""><SiTelegram className="text-4xl mx-2" /></a>
+                <a href="mailto:ivancuaco.dev@gmail.com"><SiGmail className="text-4xl mx-2" /></a>
+                <a href="https://join.skype.com/invite/uiM4BB7DdvU3" target='_blank' rel='nofollow'><SiSkype className="text-4xl mx-2" /></a>
+                <a href="https://www.linkedin.com/in/jhon-ivan-cuaco-171022261" target='_blank' rel='nofollow'><SiLinkedin className="text-4xl mx-2" /></a>
               </div>
             </div>
           </div>

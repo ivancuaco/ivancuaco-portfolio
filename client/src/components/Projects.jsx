@@ -16,7 +16,12 @@ function Projects() {
               <div key={key} className="grid grid-cols-3 border rounded shadow-xl p-4 mb-4 gap-4">
                 <img src={project.img} className='rounded w-[200px] hover:scale-105 duration-500 mx-auto border' />
                 <div className="col-span-2">
-                  <p className='font-bold'>{project.title}</p>
+
+                  {
+                    project.link ?
+                      <a href={project.link} target="_blank" rel='nofollow' className="font-bold text-blue-500">{project.title}</a> :
+                      <p className="font-bold">{project.title}</p>
+                  }
 
                   <p className='mb-4'>
                     {project.descriptions}
@@ -27,7 +32,7 @@ function Projects() {
                   <div className="flex flex-wrap text-xs">
                     {
                       project.tech.map((tech, index) => (
-                        <p key={index} className='rounded-full m-1 py-1 px-2 border'>{tech}</p>
+                        <p key={index} className='rounded-full m-1 py-1 px-2 border min-w-[50px] text-center'>{tech}</p>
                       ))
                     }
                   </div>

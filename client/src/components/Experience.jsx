@@ -45,7 +45,13 @@ function Experience() {
                   <img src={work.img} className='rounded w-[200px] hover:scale-105 duration-500 border' />
                 </div>
                 <div className="sm:col-span-2">
-                  {work.link ? <a href={work.link} target="_blank" rel='nofollow' className="font-bold">{work.title}</a> : <p className="font-bold">{work.title}</p>}
+
+                  {
+                    work.link ?
+                      <a href={work.link} target="_blank" rel='nofollow' className="font-bold text-blue-500">{work.title}</a> :
+                      <p className="font-bold">{work.title}</p>
+                  }
+
                   <p className='text-xs mb-2'><span className='font-bold'>{work.position}</span> | {work.year}</p>
                   <ul className="text-xs list-disc mb-2">
                     {
@@ -59,7 +65,7 @@ function Experience() {
                     <div className="flex flex-wrap md:w-[80%]">
                       {
                         work.tech.map((tech, index) => {
-                          return <p className='rounded-full m-1 py-1 px-2 border' key={index}>{tech}</p>
+                          return <p className='rounded-full m-1 py-1 px-2 border min-w-[50px] text-center' key={index}>{tech}</p>
                         })
                       }
                     </div>
