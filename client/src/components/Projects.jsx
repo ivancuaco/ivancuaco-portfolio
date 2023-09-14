@@ -8,7 +8,7 @@ function Projects() {
         <title>Projects | Ivan Cuaco Portfolio</title>
       </Helmet>
 
-      <div className='grid md:grid-cols-2 gap-2'>
+      <div className='grid lg:grid-cols-2 gap-2'>
 
         {
           projects.map((project, key) => {
